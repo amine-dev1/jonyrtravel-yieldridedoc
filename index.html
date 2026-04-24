@@ -1202,6 +1202,180 @@
         font-size: 40px;
       }
     }
+
+    /* ── FOOTER ───────────────────────────────────────────────────────── */
+    .site-footer {
+      background: #080b1a;
+      color: #a0aec0;
+      margin-left: 260px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .footer-main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 56px 16px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .footer-brand .footer-logo {
+      max-width: 150px;
+      height: auto;
+      margin-bottom: 14px;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+    }
+
+    .footer-brand .footer-tagline {
+      font-size: 12px;
+      color: #7b8ba8;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #e2e8f0;
+      margin-bottom: 18px;
+      letter-spacing: 0.03em;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      font-size: 13px;
+      color: #7b8ba8;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col ul li a:hover {
+      color: #e2e8f0;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 13px;
+      color: #7b8ba8;
+    }
+
+    .footer-contact-item .footer-icon {
+      flex-shrink: 0;
+      width: 16px;
+      text-align: center;
+      color: #5a6b85;
+      font-size: 13px;
+    }
+
+    .footer-contact-item a {
+      color: #7b8ba8;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-contact-item a:hover {
+      color: #e2e8f0;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 12px 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-bottom .footer-copy {
+      font-size: 12px;
+      color: #4a5568;
+    }
+
+    .footer-bottom .footer-legal {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-bottom .footer-legal a {
+      font-size: 12px;
+      color: #4a5568;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-bottom .footer-legal a:hover {
+      color: #a0aec0;
+    }
+
+    /* Light mode footer */
+    [data-theme="light"] .site-footer {
+      background: #0f1129;
+    }
+
+    /* Footer responsive */
+    @media (max-width: 1024px) {
+      .site-footer {
+        margin-left: 220px;
+      }
+
+      .footer-main {
+        padding: 40px 28px 28px;
+        gap: 28px;
+      }
+
+      .footer-bottom {
+        padding: 16px 28px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .site-footer {
+        margin-left: 0;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+        padding: 36px 20px 24px;
+        gap: 32px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 16px 20px;
+      }
+
+      .footer-bottom .footer-legal {
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-main {
+        grid-template-columns: 1fr;
+        padding: 28px 14px 20px;
+        gap: 24px;
+      }
+
+      .footer-bottom {
+        padding: 14px;
+      }
+    }
   </style>
 </head>
 
@@ -2164,6 +2338,44 @@
         <div style="height:80px;"></div>
 
   </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-main">
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <a href="https://www.jonytravel.com" target="_blank" rel="noopener noreferrer">
+          <img
+            src="https://mfnbyhvyqjjxnwtvtvvp.supabase.co/storage/v1/render/image/public/brand-assets/VERTICAL%20LOGO%20-%20WHITEJONY%20TRAVEL%20TRANSPARENT%20(1)%20(2).png?width=216&height=128&resize=contain"
+            alt="JonyTravel — Premium Chauffeur Service" class="footer-logo"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        </a>
+        <div class="footer-tagline">Integrated Mobility Platform</div>
+      </div>
+
+      <!-- Contact Column -->
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item">
+          <span class="footer-icon">📞</span>
+          <a href="tel:+212522930077">+212 694-147188</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-icon">✉️</span>
+          <a href="mailto:support@jonytravel.com">support@jonytravel.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-icon">📍</span>
+          <span>21 Platinum Center, Casablanca</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Jony Travel. All rights reserved.</div>
+    </div>
+  </footer>
 
   <script>
     // ── Theme toggle ─────────────────────────────────────────────────────
