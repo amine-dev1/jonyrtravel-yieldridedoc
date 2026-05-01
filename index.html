@@ -1525,29 +1525,31 @@
 
         <div class="section-block">
           <div class="section-label">Corps de la requête (Body JSON)</div>
+          <p style="color:var(--text-dim); margin-bottom:12px;"><strong>Note :</strong> La <code style="color:var(--accent-jony);font-family:JetBrains Mono,monospace;">quotation_id</code> est nécessaire lors de la création d'une réservation de type transfert. Elle doit être récupérée au préalable via l'endpoint <a href="#yr-quote" style="color:var(--accent-yield);text-decoration:none;font-weight:600;">/api/v1/price-quote</a> de YieldRide.</p>
           <div class="code-block">
             <div class="code-block-header">
               <span>Request Body — POST /booking</span>
               <button class="copy-btn" onclick="copyCode(this)">Copier</button>
             </div>
             <pre>{
+  <span class="json-key">"quotation_id"</span>: <span class="json-string">"949196912405644411"</span>,
   <span class="json-key">"pickup_location"</span>: <span class="json-string">"Marrakech Menara Airport"</span>,
-  <span class="json-key">"pickup_latitude"</span>: <span class="json-number">31.6069</span>,
-  <span class="json-key">"pickup_longitude"</span>: <span class="json-number">-8.0363</span>,
-  <span class="json-key">"dropoff_location"</span>: <span class="json-string">"Hotel La Mamounia, Marrakech"</span>,
-  <span class="json-key">"dropoff_latitude"</span>: <span class="json-number">31.6228</span>,
-  <span class="json-key">"dropoff_longitude"</span>: <span class="json-number">-7.9886</span>,
+  <span class="json-key">"pickup_latitude"</span>: <span class="json-number">31.6017479</span>,
+  <span class="json-key">"pickup_longitude"</span>: <span class="json-number">-8.0257112</span>,
+  <span class="json-key">"dropoff_location"</span>: <span class="json-string">"Casablanca city center"</span>,
+  <span class="json-key">"dropoff_latitude"</span>: <span class="json-number">33.5935353</span>,
+  <span class="json-key">"dropoff_longitude"</span>: <span class="json-number">-7.6209816</span>,
   <span class="json-key">"pickup_date"</span>: <span class="json-string">"2026-05-15"</span>,
-  <span class="json-key">"pickup_time"</span>: <span class="json-string">"14:00"</span>,
-  <span class="json-key">"passenger_count"</span>: <span class="json-number">3</span>,
-  <span class="json-key">"client_name"</span>: <span class="json-string">"Jean Dupont"</span>,
-  <span class="json-key">"client_phone"</span>: <span class="json-string">"+33612345678"</span>,
-  <span class="json-key">"client_email"</span>: <span class="json-string">"jean.dupont@email.com"</span>,
-  <span class="json-key">"flight_number"</span>: <span class="json-string">"AF520"</span>,
-  <span class="json-key">"notes"</span>: <span class="json-string">"2 valises"</span>,
+  <span class="json-key">"pickup_time"</span>: <span class="json-string">"10:00"</span>,
+  <span class="json-key">"passenger_count"</span>: <span class="json-number">2</span>,
+  <span class="json-key">"client_name"</span>: <span class="json-string">"TEST PARTENAIRE TEST"</span>,
+  <span class="json-key">"client_phone"</span>: <span class="json-string">"0770567423"</span>,
+  <span class="json-key">"client_email"</span>: <span class="json-string">"testp@gmail.com"</span>,
+  <span class="json-key">"flight_number"</span>: <span class="json-null">null</span>,
+  <span class="json-key">"notes"</span>: <span class="json-null">null</span>,
   <span class="json-key">"service_type"</span>: <span class="json-string">"transfert"</span>,
-  <span class="json-key">"price"</span>: <span class="json-number">350</span>,
-  <span class="json-key">"vehicle_type"</span>: <span class="json-string">"sedan"</span>
+  <span class="json-key">"price"</span>: <span class="json-number">173.25</span>,
+  <span class="json-key">"vehicle_type"</span>: <span class="json-string">"luxury"</span>
 }</pre>
           </div>
         </div>
@@ -1561,32 +1563,61 @@
             <pre>{
   <span class="json-key">"success"</span>: <span class="json-bool">true</span>,
   <span class="json-key">"reservation"</span>: {
-    <span class="json-key">"id"</span>: <span class="json-string">"uuid"</span>,
-    <span class="json-key">"reservation_number"</span>: <span class="json-string">"JT-20250601-XXXX"</span>,
+    <span class="json-key">"id"</span>: <span class="json-string">"bb45ff52-fe59-4c3f-b7a5-ffb7c638a128"</span>,
+    <span class="json-key">"reservation_number"</span>: <span class="json-string">"JT40930"</span>,
     <span class="json-key">"status"</span>: <span class="json-string">"confirmed"</span>,
-    <span class="json-key">"payment_method"</span>: <span class="json-string">"balance"</span>,
-    <span class="json-key">"total_price"</span>: <span class="json-number">350</span>,
-    <span class="json-key">"original_amount"</span>: <span class="json-number">35.00</span>,
-    <span class="json-key">"original_currency"</span>: <span class="json-string">"EUR"</span>,
-    <span class="json-key">"exchange_rate_used"</span>: <span class="json-number">10.85</span>,
-    <span class="json-key">"luggage_count"</span>: <span class="json-number">2</span>,
+    <span class="json-key">"payment_method"</span>: <span class="json-string">"compte"</span>,
+    <span class="json-key">"total_price"</span>: <span class="json-number">173.25</span>,
+    <span class="json-key">"original_amount"</span>: <span class="json-number">173.25</span>,
+    <span class="json-key">"original_currency"</span>: <span class="json-string">"MAD"</span>,
+    <span class="json-key">"exchange_rate_used"</span>: <span class="json-number">1</span>,
+    <span class="json-key">"luggage_count"</span>: <span class="json-number">0</span>,
     <span class="json-key">"language"</span>: <span class="json-string">"fr"</span>,
     <span class="json-key">"currency"</span>: <span class="json-string">"MAD"</span>
   },
   <span class="json-key">"email_status"</span>: <span class="json-string">"sent"</span>,
   <span class="json-key">"balance"</span>: {
-    <span class="json-key">"before"</span>: <span class="json-number">5000</span>,
-    <span class="json-key">"after"</span>: <span class="json-number">4650</span>,
-    <span class="json-key">"debited"</span>: <span class="json-number">350</span>,
-    <span class="json-key">"currency"</span>: <span class="json-string">"MAD"</span>,
+    <span class="json-key">"before"</span>: <span class="json-number">918.79</span>,
+    <span class="json-key">"after"</span>: <span class="json-number">902.75</span>,
+    <span class="json-key">"debited"</span>: <span class="json-number">16.04</span>,
+    <span class="json-key">"currency"</span>: <span class="json-string">"EUR"</span>,
     <span class="json-key">"low_balance_warning"</span>: <span class="json-bool">false</span>,
-    <span class="json-key">"threshold"</span>: <span class="json-number">1000</span>
+    <span class="json-key">"threshold"</span>: <span class="json-number">100</span>
   },
   <span class="json-key">"b2b_account"</span>: {
-    <span class="json-key">"name"</span>: <span class="json-string">"Partner Name"</span>,
-    <span class="json-key">"key_prefix"</span>: <span class="json-string">"jt_live_..."</span>
+    <span class="json-key">"client_id"</span>: <span class="json-string">"e00e00fd-fc13-42fc-b8c2-a6eaa856ce2d"</span>,
+    <span class="json-key">"debited_amount"</span>: <span class="json-number">16.04</span>,
+    <span class="json-key">"balance_currency"</span>: <span class="json-string">"EUR"</span>,
+    <span class="json-key">"balance_before"</span>: <span class="json-number">918.79</span>,
+    <span class="json-key">"balance_after"</span>: <span class="json-number">902.75</span>,
+    <span class="json-key">"low_balance_warning"</span>: <span class="json-bool">false</span>
   }
 }</pre>
+          </div>
+        <div class="section-block" style="margin-top: 40px;">
+          <div class="section-label">Réponses d'erreur (Validation Quotation)</div>
+          
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+            <div class="code-block">
+              <div class="code-block-header"><span>❌ quotation_id manquant</span></div>
+              <pre>{
+  <span class="json-key">"success"</span>: <span class="json-bool">false</span>,
+  <span class="json-key">"errors"</span>: [
+    <span class="json-string">"quotation_id est requis pour les réservations de type transfert. Veuillez fournir un quotation_id valide."</span>
+  ]
+}</pre>
+            </div>
+
+            <div class="code-block">
+              <div class="code-block-header"><span>❌ Incohérence avec le devis</span></div>
+              <pre>{
+  <span class="json-key">"success"</span>: <span class="json-bool">false</span>,
+  <span class="json-key">"error"</span>: <span class="json-string">"Quotation invalide. Les champs suivants ne correspondent pas au devis : nombre de passagers. Veuillez vérifier et réessayer."</span>,
+  <span class="json-key">"mismatch_fields"</span>: [
+    <span class="json-string">"passenger_count"</span>
+  ]
+}</pre>
+            </div>
           </div>
         </div>
 
@@ -2114,10 +2145,19 @@
                 <div class="code-block-header"><span>Response Body</span></div>
                 <pre>{
   <span class="json-key">"success"</span>: <span class="json-bool">true</span>,
-  <span class="json-key">"lead_time_hours"</span>: <span class="json-number">524.3</span>,
+  <span class="json-key">"quotation_id"</span>: <span class="json-string">"830290279304672322"</span>,
+  <span class="json-key">"lead_time_hours"</span>: <span class="json-number">335.3</span>,
   <span class="json-key">"trip"</span>: {
-    <span class="json-key">"pickup"</span>: { <span class="json-key">"name"</span>: <span class="json-string">"Marrakech Menara Airport"</span>, <span class="json-key">"lat"</span>: <span class="json-number">31.6017</span>, <span class="json-key">"lng"</span>: <span class="json-number">-8.0257</span> },
-    <span class="json-key">"dropoff"</span>: { <span class="json-key">"name"</span>: <span class="json-string">"Casablanca city center"</span>, <span class="json-key">"lat"</span>: <span class="json-number">33.5935</span>, <span class="json-key">"lng"</span>: <span class="json-number">-7.6210</span> },
+    <span class="json-key">"pickup"</span>: {
+      <span class="json-key">"name"</span>: <span class="json-string">"Marrakech Menara Airport"</span>,
+      <span class="json-key">"lat"</span>: <span class="json-number">31.6017479</span>,
+      <span class="json-key">"lng"</span>: <span class="json-number">-8.0257112</span>
+    },
+    <span class="json-key">"dropoff"</span>: {
+      <span class="json-key">"name"</span>: <span class="json-string">"Casablanca city center"</span>,
+      <span class="json-key">"lat"</span>: <span class="json-number">33.5935353</span>,
+      <span class="json-key">"lng"</span>: <span class="json-number">-7.6209816</span>
+    },
     <span class="json-key">"distance_km"</span>: <span class="json-number">246.5</span>,
     <span class="json-key">"duration_minutes"</span>: <span class="json-number">177</span>
   },
@@ -2126,14 +2166,78 @@
       <span class="json-key">"category"</span>: <span class="json-string">"monospace_executif"</span>,
       <span class="json-key">"price"</span>: <span class="json-number">190.82</span>,
       <span class="json-key">"currency"</span>: <span class="json-string">"EUR"</span>,
-      <span class="json-key">"capacity"</span>: { <span class="json-key">"passengers"</span>: <span class="json-number">6</span>, <span class="json-key">"baggage"</span>: <span class="json-number">6</span> }
+      <span class="json-key">"supplier"</span>: <span class="json-null">null</span>,
+      <span class="json-key">"image_url"</span>: <span class="json-string">"https://mgqnijpiassuhpojxlvr.supabase.co/storage/v1/object/public/vehicle-images/hvn61xkset.png"</span>,
+      <span class="json-key">"capacity"</span>: {
+        <span class="json-key">"passengers"</span>: <span class="json-number">6</span>,
+        <span class="json-key">"baggage"</span>: <span class="json-number">6</span>
+      }
+    },
+    {
+      <span class="json-key">"category"</span>: <span class="json-string">"luxury"</span>,
+      <span class="json-key">"price"</span>: <span class="json-number">281.85</span>,
+      <span class="json-key">"currency"</span>: <span class="json-string">"EUR"</span>,
+      <span class="json-key">"supplier"</span>: <span class="json-null">null</span>,
+      <span class="json-key">"image_url"</span>: <span class="json-string">"https://mgqnijpiassuhpojxlvr.supabase.co/storage/v1/object/public/vehicle-images/1pjzcnprax7.jpg"</span>,
+      <span class="json-key">"capacity"</span>: {
+        <span class="json-key">"passengers"</span>: <span class="json-number">3</span>,
+        <span class="json-key">"baggage"</span>: <span class="json-number">2</span>
+      }
+    },
+    {
+      <span class="json-key">"category"</span>: <span class="json-string">"grand_monospace"</span>,
+      <span class="json-key">"price"</span>: <span class="json-number">170.9</span>,
+      <span class="json-key">"currency"</span>: <span class="json-string">"EUR"</span>,
+      <span class="json-key">"supplier"</span>: <span class="json-null">null</span>,
+      <span class="json-key">"image_url"</span>: <span class="json-string">"https://mgqnijpiassuhpojxlvr.supabase.co/storage/v1/object/public/vehicle-images/5fflxvgnm85.png"</span>,
+      <span class="json-key">"capacity"</span>: {
+        <span class="json-key">"passengers"</span>: <span class="json-number">7</span>,
+        <span class="json-key">"baggage"</span>: <span class="json-number">7</span>
+      }
     },
     {
       <span class="json-key">"category"</span>: <span class="json-string">"standard"</span>,
       <span class="json-key">"price"</span>: <span class="json-number">173.25</span>,
       <span class="json-key">"currency"</span>: <span class="json-string">"EUR"</span>,
       <span class="json-key">"supplier"</span>: <span class="json-string">"LIMO4YOU"</span>,
-      <span class="json-key">"capacity"</span>: { <span class="json-key">"passengers"</span>: <span class="json-number">4</span>, <span class="json-key">"baggage"</span>: <span class="json-number">2</span> }
+      <span class="json-key">"image_url"</span>: <span class="json-string">"https://mgqnijpiassuhpojxlvr.supabase.co/storage/v1/object/public/vehicle-images/lr14c7yzd28.png"</span>,
+      <span class="json-key">"capacity"</span>: {
+        <span class="json-key">"passengers"</span>: <span class="json-number">4</span>,
+        <span class="json-key">"baggage"</span>: <span class="json-number">2</span>
+      }
+    },
+    {
+      <span class="json-key">"category"</span>: <span class="json-string">"monospace"</span>,
+      <span class="json-key">"price"</span>: <span class="json-number">167</span>,
+      <span class="json-key">"currency"</span>: <span class="json-string">"EUR"</span>,
+      <span class="json-key">"supplier"</span>: <span class="json-string">"LIMO4YOU"</span>,
+      <span class="json-key">"image_url"</span>: <span class="json-string">"https://mgqnijpiassuhpojxlvr.supabase.co/storage/v1/object/public/vehicle-images/6h7ol68z9m4.png"</span>,
+      <span class="json-key">"capacity"</span>: {
+        <span class="json-key">"passengers"</span>: <span class="json-number">4</span>,
+        <span class="json-key">"baggage"</span>: <span class="json-number">3</span>
+      }
+    },
+    {
+      <span class="json-key">"category"</span>: <span class="json-string">"executif"</span>,
+      <span class="json-key">"price"</span>: <span class="json-number">168</span>,
+      <span class="json-key">"currency"</span>: <span class="json-string">"EUR"</span>,
+      <span class="json-key">"supplier"</span>: <span class="json-string">"LIMO4YOU"</span>,
+      <span class="json-key">"image_url"</span>: <span class="json-string">"https://mgqnijpiassuhpojxlvr.supabase.co/storage/v1/object/public/vehicle-images/flaxbmuwbam.png"</span>,
+      <span class="json-key">"capacity"</span>: {
+        <span class="json-key">"passengers"</span>: <span class="json-number">3</span>,
+        <span class="json-key">"baggage"</span>: <span class="json-number">3</span>
+      }
+    },
+    {
+      <span class="json-key">"category"</span>: <span class="json-string">"minibus"</span>,
+      <span class="json-key">"price"</span>: <span class="json-number">211.73</span>,
+      <span class="json-key">"currency"</span>: <span class="json-string">"EUR"</span>,
+      <span class="json-key">"supplier"</span>: <span class="json-null">null</span>,
+      <span class="json-key">"image_url"</span>: <span class="json-string">"https://mgqnijpiassuhpojxlvr.supabase.co/storage/v1/object/public/vehicle-images/odzdleruqz.jpg"</span>,
+      <span class="json-key">"capacity"</span>: {
+        <span class="json-key">"passengers"</span>: <span class="json-number">7</span>,
+        <span class="json-key">"baggage"</span>: <span class="json-number">7</span>
+      }
     }
   ],
   <span class="json-key">"unavailable_count"</span>: <span class="json-number">2</span>
